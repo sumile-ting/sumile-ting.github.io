@@ -1,0 +1,27 @@
+{
+  "name": "sumile-ting.github.io",
+  "version": "1.0.0",
+  "description": "个人git项目展示",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumile-ting/sumile-ting.github.io.git"
+  },
+  "author": "sumile-ting",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumile-ting/sumile-ting.github.io/issues"
+  },
+  "homepage": "https://github.com/sumile-ting/sumile-ting.github.io#readme",
+  "dependencies": {
+    "angular": "^1.7.8",
+    "angular-ui-bootstrap": "^2.5.6",
+    "angular-ui-router": "^1.0.22",
+    "bootstrap": "3.3.7",
+    "jquery": "1.12.4",
+    "font-awesome": "4.7.0"
+  }
+}
