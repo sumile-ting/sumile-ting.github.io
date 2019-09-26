@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    var app = angular.module('AppMoudle');
+    var app = angular.module('AppModule');
     app.config(['$stateProvider', function ($stateProvider) {
           var onlineToolState = {
             name: 'about',
