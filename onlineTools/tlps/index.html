@@ -3,19 +3,53 @@
         <h1 class="h1-font"><i class="fa fa-gavel" aria-hidden="true"></i>&nbsp; 在线工具</h1>
     </div>
 </header>
-<div class="container">
+<div class="container" ng-init="init()">
     <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active">
-            <a href="#transform" aria-controls="home" role="tab" data-toggle="tab">地图坐标转换</a>
+            <a href="#transform" aria-controls="home" role="tab" data-toggle="tab" ng-click="goCoordinateTranform($event)">地图坐标转换</a>
         </li>
         <li role="presentation">
             <a href="#excelPreview" aria-controls="excelPreview" role="tab" data-toggle="tab" ng-click="goExcelPreview($event)">在线excel预览</a>
         </li>
     </ul>
     <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="transform">地图坐标转换</div>
+        <div role="tabpanel" class="tab-pane active" id="transform">
+            <div class="penel-content">
+                <div id="baiduMap" baidu-map ng-model="map"></div>
+                <div class="table-container">
+                    <table class="table table-bordered table-striped">
+                        <tbody>
+                            <tr>
+                                <th>WGS84坐标系</th>
+                                <td>
+                                      <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="wgj84" placeholder="经度,纬度" id="wgs84">
+                                      </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>GCJ02坐标系</th>
+                                <td>
+                                      <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="gcj02" placeholder="经度,纬度" id="gcj02">
+                                      </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>BD09坐标系</th>
+                                <td>
+                                      <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="bd09" placeholder="经度,纬度" id="bd09">
+                                      </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
         <div role="tabpanel" class="tab-pane" id="excelPreview">
-            <div class="content" style="padding: 20px;">
+            <div class="penel-content">
                 <input type="file" name="file" id="file">
                 <div id="excelTable"></div>
             </div>

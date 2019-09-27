@@ -42,3 +42,16 @@
     text-decoration: none;
     color: #009a61;
 }
+.penel-content {
+    padding: 20px;
+}
+#baiduMap {
+    width: 100%;
+    height: 400px;
+}
+.table-container {
+    padding-top: 10px;
+}
+.table-container > table >tbody > tr > th {
+    width: 117px;
+}
