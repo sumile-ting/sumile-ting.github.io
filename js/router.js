@@ -2,12 +2,13 @@
     'use strict';
     var app = angular.module('AppModule');
     app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise('/online-tool'); 
-        
+        $urlRouterProvider.otherwise('/online-tool');
+
           var onlineToolState = {
-            name: 'online-tool',
-            url: '/online-tool',
-            templateUrl: 'onlineTools/tlps/index.html'
+              name: 'online-tool',
+              url: '/online-tool',
+              controller: 'OnlineToolCtrl',
+              templateUrl: 'onlineTools/tlps/index.html'
           }
 
           $stateProvider.state(onlineToolState);

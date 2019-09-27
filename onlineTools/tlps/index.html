@@ -9,11 +9,16 @@
             <a href="#transform" aria-controls="home" role="tab" data-toggle="tab">地图坐标转换</a>
         </li>
         <li role="presentation">
-            <a href="#excelPreview" aria-controls="excelPreview" role="tab" data-toggle="tab">在线excel预览</a>
+            <a href="#excelPreview" aria-controls="excelPreview" role="tab" data-toggle="tab" ng-click="goExcelPreview($event)">在线excel预览</a>
         </li>
     </ul>
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="transform">地图坐标转换</div>
-        <div role="tabpanel" class="tab-pane" id="excelPreview">在线excel预览</div>
+        <div role="tabpanel" class="tab-pane" id="excelPreview">
+            <div class="content" style="padding: 20px;">
+                <input type="file" name="file" id="file">
+                <div id="excelTable"></div>
+            </div>
+        </div>
     </div>
 </div>

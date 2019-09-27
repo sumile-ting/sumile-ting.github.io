@@ -22,9 +22,7 @@
     "angular-ui-router": "^1.0.22",
     "bootstrap": "3.3.7",
     "jquery": "1.12.4",
-    "font-awesome": "4.7.0"
-  },
-  "devDependencies": {
-    "express": "^4.17.1"
+    "font-awesome": "4.7.0",
+    "excel-preview": "^1.0.3"
   }
 }
