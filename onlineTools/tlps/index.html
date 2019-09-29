@@ -15,6 +15,15 @@
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="transform">
             <div class="penel-content">
+                <div style="padding-bottom: 10px;">
+                        <label class="control-label" style="float:left; line-height: 30px;"> 大地坐标 </label>
+                        <div class="input-group" style="float: left; width: 30%; padding-left: 10px;">
+                            <input class="form-control" type="text" placeholder="横坐标X,纵坐标Y" ng-model="daDiCoordinate">
+                            <span class="input-group-btn">
+                                <button class="btn btn-info" ng-click="transform()">转换</button>
+                            </span>
+                        </div>
+                </div>
                 <div id="baiduMap" baidu-map ng-model="map"></div>
                 <div class="table-container">
                     <table class="table table-bordered table-striped">
@@ -23,7 +32,8 @@
                                 <th>WGS84坐标系</th>
                                 <td>
                                       <div class="form-group">
-                                        <input type="text" class="form-control" ng-model="wgj84" placeholder="经度,纬度" id="wgs84">
+                                        <input type="text" class="form-control" placeholder="经度,纬度" id="wgs84"
+                                               pattern="[0-9]+(.[0-9]+)?[,][0-9]+(.[0-9]+)?"  ng-keyup="enterLonLat($event, 'wgs84')">
                                       </div>
                                 </td>
                             </tr>
@@ -31,7 +41,8 @@
                                 <th>GCJ02坐标系</th>
                                 <td>
                                       <div class="form-group">
-                                        <input type="text" class="form-control" ng-model="gcj02" placeholder="经度,纬度" id="gcj02">
+                                        <input type="text" class="form-control" placeholder="经度,纬度" id="gcj02"
+                                               pattern="[0-9]+(.[0-9]+)?[,][0-9]+(.[0-9]+)?" ng-keyup="enterLonLat($event, 'gcj02')">
                                       </div>
                                 </td>
                             </tr>
@@ -39,8 +50,34 @@
                                 <th>BD09坐标系</th>
                                 <td>
                                       <div class="form-group">
-                                        <input type="text" class="form-control" ng-model="bd09" placeholder="经度,纬度" id="bd09">
+                                        <input type="text" class="form-control" placeholder="经度,纬度" id="bd09"
+                                               pattern="[0-9]+(.[0-9]+)?[,][0-9]+(.[0-9]+)?" ng-keyup="enterLonLat($event, 'bd09')">
                                       </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>解释</div>
+                <div class="table-container">
+                    <table class="table table-bordered table-striped">
+                        <tbody>
+                            <tr>
+                                <th>WGS84坐标系</th>
+                                <td>
+                                    地球坐标系，国际通用坐标系
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>GCJ02坐标系</th>
+                                <td>
+                                    火星坐标系，WGS84坐标系加密后的坐标系；Google国内地图、高德、QQ地图 使用
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>BD09坐标系</th>
+                                <td>
+                                    百度坐标系，GCJ02坐标系加密后的坐标系
                                 </td>
                             </tr>
                         </tbody>

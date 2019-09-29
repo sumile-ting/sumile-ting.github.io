@@ -77,6 +77,8 @@
                     'lon': wgsLon + d.lon
                 };
             };
+            TransformUtil.prototype.gcj_encrypt = gcj_encrypt;
+
             //GCJ-02 to WGS-84
             TransformUtil.prototype.gcj_decrypt = function (gcjLat, gcjLon) {
                 if (outOfChina(gcjLat, gcjLon))
@@ -163,7 +165,7 @@
                 },
                 // Web mercator to WGS-84
                 // mercatorLat -> y mercatorLon -> x
-                TransformUtil.prototype.mercator_decrypt = function (X, Y) {
+            TransformUtil.prototype.mercator_decrypt = function (X, Y) {
 
                     var ProjNo;
                     var ZoneWide; //// 带宽

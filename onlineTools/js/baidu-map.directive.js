@@ -9,12 +9,11 @@
            let getPositionSuccessFun = function(r) {
                if (this.getStatus() == BMAP_STATUS_SUCCESS) {
                     var position = {
-                        lng: r.point.lng,
+                        lon: r.point.lng,
                         lat: r.point.lat
                     }
-                    console.log('您的位置：' + r.point.lng + ',' + r.point.lat);
                     BaiduMapService.showLocations(position, map);
-                    map.centerAndZoom(new BMap.Point(r.point.lng, r.point.lat), 13);
+                    map.centerAndZoom(new BMap.Point(position.lon, position.lat), 13);
                }
 
            };
