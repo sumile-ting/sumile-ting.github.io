@@ -1,3 +1,4 @@
 angular.module('AppModule', [
-    'ui.router'
+    'ui.router',
+    'Encrypt'
 ])

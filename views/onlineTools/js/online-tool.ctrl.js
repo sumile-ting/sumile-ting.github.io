@@ -1,7 +1,8 @@
 (function () {
     'use strict';
     var app = angular.module('AppModule');
-    app.controller('OnlineToolCtrl', ['$scope', '$timeout', 'BaiduMapService', function ($scope, $timeout, BaiduMapService) {
+    app.controller('OnlineToolCtrl', ['$scope', '$timeout', 'BaiduMapService', 'Md5Service',
+        function ($scope, $timeout, BaiduMapService, Md5Service) {
 
         $scope.init = function() {
             $timeout(() => initMapEvt());
@@ -77,6 +78,9 @@
 
         }
 
+        /**
+         * 大地坐标转经纬度
+         */
         $scope.transform = function () {
             let xy = $scope.daDiCoordinate;
             if(!validate(xy)) return;
@@ -88,5 +92,18 @@
             BaiduMapService.addOverlay(bdLonLat.lat, bdLonLat.lon, $scope.map);
         }
 
+        /**
+         * MD5加密
+         */
+        $scope.md5Encode = function () {
+            $scope.md5MiWen = Md5Service.hex_md5($scope.md5MingWen);
+        }
+
+        /**
+         *
+         */
+        $scope.md5Decode = function () {
+
+        }
     }])
 })(angular)

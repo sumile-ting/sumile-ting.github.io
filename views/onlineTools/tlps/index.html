@@ -6,10 +6,13 @@
 <div class="container" ng-init="init()">
     <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active">
-            <a href="#transform" aria-controls="home" role="tab" data-toggle="tab" ng-click="goCoordinateTranform($event)">地图坐标转换</a>
+            <a href="#transform" aria-controls="transform" role="tab" data-toggle="tab" ng-click="goCoordinateTranform($event)">地图坐标转换</a>
         </li>
         <li role="presentation">
             <a href="#excelPreview" aria-controls="excelPreview" role="tab" data-toggle="tab" ng-click="goExcelPreview($event)">在线excel预览</a>
+        </li>
+        <li role="presentation">
+            <a href="#md5" aria-controls="md5" role="tab" data-toggle="tab">MD5加密解密</a>
         </li>
     </ul>
     <div class="tab-content">
@@ -89,6 +92,28 @@
             <div class="penel-content">
                 <input type="file" name="file" id="file">
                 <div id="excelTable"></div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="md5">
+            <div class="penel-content">
+                <div class="col-md-5">
+                    <div class="title">明文</div>
+                    <textarea class="text-content" ng-model="md5MingWen"></textarea>
+                </div>
+                <div class="col-md-2 btn-content">
+                    <div class="btn-left-right">
+                        <button class="btn btn-primary" ng-click="md5Encode()">
+                            <i class="glyphicon glyphicon-chevron-right"></i>加密
+                        </button>
+                        <button class="btn btn-primary" ng-click="md5Decode()">
+                            <i class="glyphicon glyphicon-chevron-left"></i>解密
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="title">MD5</div>
+                    <textarea class="text-content" ng-model="md5MiWen"></textarea>
+                </div>
             </div>
         </div>
     </div>

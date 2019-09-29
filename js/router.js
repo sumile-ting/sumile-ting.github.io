@@ -8,10 +8,18 @@
               name: 'online-tool',
               url: '/online-tool',
               controller: 'OnlineToolCtrl',
-              templateUrl: 'onlineTools/tlps/index.html'
+              templateUrl: 'views/onlineTools/tlps/index.html'
           }
 
           $stateProvider.state(onlineToolState);
+
+          var about = {
+              name: 'about',
+              url: '/about',
+              templateUrl: 'views/about/tlps/index.html'
+          }
+
+          $stateProvider.state(about);
     }])
 
 
