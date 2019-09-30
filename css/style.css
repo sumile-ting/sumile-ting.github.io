@@ -1,3 +1,6 @@
+html, body {
+    height: 100%;
+}
 .navbar {
     margin-bottom: 0;
     min-height: 40px;
@@ -82,4 +85,12 @@ section > h2 {
     color: #1A2980;
     font-family: sans-serif;
     font-weight: bold;
+}
+.footer-wrapper {
+    bottom: 0px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    background: #1fa67a;
+    color: #a5d8c7;
 }
