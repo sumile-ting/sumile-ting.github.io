@@ -1,10 +1,12 @@
 {
   "name": "sumile-ting.github.io",
   "version": "1.0.0",
-  "description": "个人git项目展示",
+  "description": "My webpack project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -20,9 +22,24 @@
     "angular": "^1.7.8",
     "angular-ui-bootstrap": "^2.5.6",
     "angular-ui-router": "^1.0.22",
-    "bootstrap": ">=3.4.1",
-    "jquery": ">=3.4.0",
+    "bootstrap": "^3.4.1",
+    "bootstrap-table": "^1.15.5",
+    "excel-preview": "^1.0.3",
     "font-awesome": "4.7.0",
-    "excel-preview": "^1.0.3"
+    "jquery": ">=3.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "css-loader": "^3.2.0",
+    "expose-loader": "^0.7.5",
+    "file-loader": "0.11.2",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
   }
 }

@@ -1,3 +1,4 @@
+
 (function () {
     'use strict';
     var app = angular.module('AppModule');
@@ -14,7 +15,30 @@
          */
         $scope.goExcelPreview = function (e) {
             e.preventDefault();
-            angular.element("#excelTable").excelPreview();
+            // $("#excelTable").excelPreview();
+            $("#excelTable").bootstrapTable({
+                  search: true,
+                  showColumns: true,
+                  columns: [{
+                    field: 'id',
+                    title: 'Item ID'
+                  }, {
+                    field: 'name',
+                    title: 'Item Name'
+                  }, {
+                    field: 'price',
+                    title: 'Item Price'
+                  }],
+                  data: [{
+                    id: 1,
+                    name: 'Item 1',
+                    price: '$1'
+                  }, {
+                    id: 2,
+                    name: 'Item 2',
+                    price: '$2'
+                  }]
+                })
         }
 
         /**
@@ -57,7 +81,7 @@
          */
         $scope.enterLonLat = function (e, inputId) {
             let keycode = window.event ? e.keyCode : e.which;
-            let inputVal = angular.element("#" + inputId).val();
+            let inputVal = $("#" + inputId).val();
             if (keycode == 13) {
                 if(!validate(inputVal)) return;
                 let lonlat = inputVal.split(',').map(id => parseFloat(id.trim()));
@@ -86,7 +110,7 @@
             if(!validate(xy)) return;
             let xyArray = xy.split(',').map(id => parseFloat(id.trim()));
             let gcjLonLat = BaiduMapService.dadiToGcj(xyArray[1], xyArray[0]);
-            angular.element('#gcj02').val(gcjLonLat.lon + ',' + gcjLonLat.lat);
+            $('#gcj02').val(gcjLonLat.lon + ',' + gcjLonLat.lat);
             BaiduMapService.gcjToWgs(gcjLonLat.lat, gcjLonLat.lon);
             let bdLonLat = BaiduMapService.gcjToBd(gcjLonLat.lat, gcjLonLat.lon);
             BaiduMapService.addOverlay(bdLonLat.lat, bdLonLat.lon, $scope.map);

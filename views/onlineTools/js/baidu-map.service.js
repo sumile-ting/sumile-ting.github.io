@@ -1,5 +1,5 @@
 (function () {
-   'use strict';
+   // 'use strict';
    var app = angular.module('AppModule');
    app.service('BaiduMapService', ['TransformUtil', function (TransformUtil) {
 
@@ -11,28 +11,28 @@
         //baidu 转 gcj
         function baiduToGcj(lat, lon) {
             let gcjLonLat = TransformUtil.bd_decrypt(lat, lon);
-            angular.element('#gcj02').val(gcjLonLat.lon + ',' + gcjLonLat.lat);
+            $('#gcj02').val(gcjLonLat.lon + ',' + gcjLonLat.lat);
             return gcjLonLat;
         };
 
         //Gcj 转 wgs
         function gcjToWgs(lat ,lon) {
             let wsgLonLat = TransformUtil.gcj_decrypt_exact(lat, lon);
-            angular.element('#wgs84').val(wsgLonLat.lon + ',' + wsgLonLat.lat);
+            $('#wgs84').val(wsgLonLat.lon + ',' + wsgLonLat.lat);
             return wsgLonLat;
         };
 
         //wgs 转 gcj
         function wgsToGcj(lat ,lon) {
             let wsgLonLat = TransformUtil.gcj_encrypt(lat, lon);
-            angular.element('#wgs84').val(wsgLonLat.lon + ',' + wsgLonLat.lat);
+            $('#wgs84').val(wsgLonLat.lon + ',' + wsgLonLat.lat);
             return wsgLonLat;
         };
 
         //Gcj 转 Baidu
         function gcjToBd(lat ,lon) {
             let bdLonLat = TransformUtil.bd_encrypt(lat, lon);
-            angular.element('#bd09').val(bdLonLat.lon + ',' + bdLonLat.lat);
+            $('#bd09').val(bdLonLat.lon + ',' + bdLonLat.lat);
             return bdLonLat;
         };
 
@@ -51,7 +51,7 @@
        return {
            showLocations: function (position, map) {
                 let lonlat = position.lon + ',' + position.lat;
-                angular.element('#bd09').val(lonlat);
+                $('#bd09').val(lonlat);
                 let gcjLonLat = baiduToGcj(position.lat, position.lon);
                 gcjToWgs(gcjLonLat.lat, gcjLonLat.lon);
                 addOverlay(position.lat, position.lon, map);
