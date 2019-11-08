@@ -52,7 +52,7 @@ module.exports = {
             inject: false,
             favicon: 'favicon.ico'
         }),
-          new webpack.ProvidePlugin({
+        new webpack.ProvidePlugin({
             '$': 'jquery',
             'jQuery': 'jquery',
             'window.jQuery': 'jquery'

@@ -3,6 +3,8 @@ import uiRouter from 'angular-ui-router';
 //
 import '../node_modules/bootstrap/dist/js/bootstrap.min';
 import 'bootstrap-table';
+import 'bootstrap-fileinput';
+import '../node_modules/excel-preview/js/dist/excel-preview.min';
 require("../js/app.js");
 require("../js/router.js");
 require("../js/util/md5-module.js");
