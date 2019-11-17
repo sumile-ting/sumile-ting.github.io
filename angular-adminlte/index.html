@@ -1,0 +1,110 @@
+<!doctype html>
+<html ng-app="app" lang="en" ng-cloak>
+<head>
+  <meta charset="UTF-8">
+  <title>Angular App</title>
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <base href="/">
+
+  <style>
+    [ng\:cloak],
+    [ng-cloak],
+    [data-ng-cloak],
+    [x-ng-cloak],
+    .ng-cloak,
+    .x-ng-cloak {
+      display: none !important;
+    }
+  </style>
+<link href="/css/app.css" rel="stylesheet"></head>
+<body ng-controller="bodyController">
+<div class="wrapper" ng-class="{toggleLeftPanel: !leftPanelShow}">
+  <header class="main-header navbar-static-top" ng-class="{toggleDropdownMenu: isUserMenuHover}">
+    <div class="logo">
+      <img src="./img/logo-small.png">
+      <div class="logo-title">
+        ADMIN
+      </div>
+    </div>
+    <div class="left-nav-con" ng-click="toggleLeftMenu()">
+      <i class="fa fa-navicon" ></i>
+    </div>
+    <!-- 顶部导航菜单 -->
+    <nav class="nav-container" role="navigation">
+      <ul class="nav-ul">
+        <li ng-repeat="item in menuConfig" ng-class="{active: leftNav[item.id]}" ng-click="routeNav(item.id)">
+            <i class="fa fa-2x fa-top-menu-i" ng-class="item.icon"></i>
+            <span class="top-menu-label">{{item.name}}</span>
+        </li>
+      </ul>
+    </nav>
+    <div class="user-info pull-right" ng-mouseenter="hoverMenu(true)" ng-mouseleave="hoverMenu(false)">
+      <img src="img/user.png" class="user-info-img">
+      <span class="user-info-label">admin</span>
+    </div>
+    <ul class="dropdown-menu user-dropdown-menu" aria-labelledby="dropdownMenu1" ng-mouseenter="hoverMenu(true)"  ng-mouseleave="hoverMenu(false)">
+        <li><a href="javascript:void(0)">设置</a></li>
+        <li><a href="javascript:void(0)">退出</a></li>
+    </ul>
+  </header>
+  <div class="main">
+    <aside class="main-sidebar">
+      <!-- 左侧导航菜单 - 折叠前 -->
+      <ul class="navmenu-x" ng-repeat="item in menuConfig" ng-if="leftNav[item.id] && leftPanelShow">
+        <div ng-repeat="subItem in item.subMenu">
+          <li class="navmenu-submenu"  ng-if="!subItem.isLeaf">
+            <div class="navmenu-submenu-title" menu-collapse-expand>
+              <i class="fa" ng-class="subItem.leftIcon"></i>
+              {{subItem.name}}
+              <i class="fa fa-right-icon" ng-class="subItem.rightIcon"></i>
+            </div>
+            <ul class="navmenu-menu" ng-show="!subItem.hiddenSubMenu">
+              <li class="navmenu-menu-item"  ng-repeat="leafItem in subItem.subMenu" ui-sref-active="active">
+                <a ui-sref="{{leafItem.href}}" >{{leafItem.name}}</a>
+              </li>
+            </ul>
+
+          </li>
+          <li class="navmenu-menu-item" ng-if="subItem.isLeaf" style="padding-left: 20px;" ui-sref-active="active">
+            <i class="fa " ng-class="subItem.leftIcon"></i>
+            <a ui-sref="{{subItem.href}}">{{subItem.name}}</a>
+          </li>
+        </div>
+      </ul>
+      <!-- 左侧导航菜单 - 折叠后 -->
+      <ul class="navmenu-x" ng-repeat="item in menuConfig" ng-if="leftNav[item.id] && !leftPanelShow" >
+        <div ng-repeat="subItem in item.subMenu" ng-mouseenter="showMenu($index, true)" ng-mouseleave="showMenu($index, false)">
+          <li class="navmenu-submenu navmenu-submenu-hook"  ng-if="!subItem.isLeaf">
+            <div class="navmenu-submenu-title">
+              <i class="fa" ng-class="subItem.leftIcon"></i>
+            </div>
+             <ul class="navmenu-menu" ng-show="submenuHook[$index]" ng-class="{'navmenu-menu-hook': submenuHook[$index]}">
+              <li class="navmenu-menu-item"  ng-repeat="leafItem in subItem.subMenu" ui-sref-active="active">
+                <a ui-sref="{{leafItem.href}}" >{{leafItem.name}}</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="navmenu-menu-item" ng-if="subItem.isLeaf" style="padding-left: 20px;" ui-sref-active="active" ui-sref="{{subItem.href}}">
+            <i class="fa " ng-class="subItem.leftIcon"></i>
+          </li>
+        </div>
+      </ul>
+
+    </aside>
+    <section class="content-wrapper">
+      <ui-view></ui-view>
+    </section>
+  </div>
+
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+    </div>
+    <strong>@ sumile-ting</strong>
+  </footer>
+</div>
+
+<script type="text/javascript" src="/app.41ca7b0386f75b6bb88f.js"></script></body>
+</html>
