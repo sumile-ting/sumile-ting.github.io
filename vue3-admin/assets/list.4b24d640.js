@@ -1,0 +1,1 @@
+import t from"./index.5466a83a.js";import{_ as e,o as n,m as c,w as s,a as _}from"./index.928d11af.js";const a={},r=_("div",null,"\u6545\u969C\u62A5\u4FEExxx",-1);function i(l,f){const o=t;return n(),c(o,null,{default:s(()=>[r]),_:1})}const u=e(a,[["render",i]]);export{u as default};
