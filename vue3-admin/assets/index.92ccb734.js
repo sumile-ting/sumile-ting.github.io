@@ -1,1 +1,0 @@
-import{_ as a,o as t,c,r as e,a as o}from"./index.d17a8e71.js";const n={},r={class:"sumile-basic-container"},i={class:"sumile-basic-container-table"},l={class:"sumile-basic-container-table-operator"};function _(s,d){return t(),c("div",r,[e(s.$slots,"search"),o("div",i,[o("div",l,[e(s.$slots,"operator")]),e(s.$slots,"default")])])}const m=a(n,[["render",_]]);export{m as default};
