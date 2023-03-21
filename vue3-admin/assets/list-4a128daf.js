@@ -1,0 +1,1 @@
+import e from"./index-150b277b.js";import{_ as o,o as c,b as n,w as s,f as a}from"./index-80f93dc4.js";const _={},r=a("div",null,"故障报修xxx",-1);function i(f,l){const t=e;return c(),n(t,null,{default:s(()=>[r]),_:1})}const x=o(_,[["render",i]]);export{x as default};
