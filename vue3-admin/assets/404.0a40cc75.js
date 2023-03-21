@@ -1,1 +1,0 @@
-import{_ as o,o as t,c,J as a,L as n,a as _}from"./index.928d11af.js";const d={},s=e=>(a("data-v-9639b333"),e=e(),n(),e),r={class:"sumile-error-page"},p=s(()=>_("h1",null,"404",-1)),l=s(()=>_("h2",null,"\u9875\u9762\u672A\u627E\u5230",-1)),i=[p,l];function h(e,u){return t(),c("div",r,i)}const m=o(d,[["render",h],["__scopeId","data-v-9639b333"]]);export{m as default};
