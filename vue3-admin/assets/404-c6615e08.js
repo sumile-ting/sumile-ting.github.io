@@ -1,1 +1,0 @@
-import{_ as o,o as t,c,R as a,S as n,f as _}from"./index-80f93dc4.js";const d={},s=e=>(a("data-v-9639b333"),e=e(),n(),e),r={class:"sumile-error-page"},p=s(()=>_("h1",null,"404",-1)),l=s(()=>_("h2",null,"页面未找到",-1)),i=[p,l];function h(e,u){return t(),c("div",r,i)}const m=o(d,[["render",h],["__scopeId","data-v-9639b333"]]);export{m as default};
