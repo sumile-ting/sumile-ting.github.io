@@ -1,0 +1,1 @@
+import{_ as e,o as c,c as a}from"./index-116d1b68.js";const s={};function t(r,i){return c(),a("div",null,"XXXXX")}const o=e(s,[["render",t],["__file","F:/online/project-vue3/src/views/basic-data/device-basic-data/device-params/list.vue"]]);export{o as default};
