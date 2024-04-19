@@ -1,1 +1,0 @@
-import{_ as e,o as c,c as t}from"./index-fd9b97e1.js";const s={};function a(i,n){return c(),t("div",null,"设备安装位置")}const r=e(s,[["render",a],["__file","F:/online/project-vue3/src/views/basic-data/device-basic-data/device-installation-site/list.vue"]]);export{r as default};
